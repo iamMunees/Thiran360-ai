@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Cards from '../script/card';
+import { useCart } from '../context/CartContext';
+import Cards from '../script/card'; // your card data source
 
 const Product = () => {
+  const { addToCart } = useCart();
+
   return (
     <div>
       <h1 className="text-xl sm:text-3xl font-bold py-6 text-center text-gray-800">
@@ -32,16 +35,23 @@ const Product = () => {
               <p className="text-sm text-gray-600 mb-4">{brand.offer}</p>
 
               {brand.actions?.map((action, btnIndex) => (
-                <motion.a
-                  key={btnIndex}
-                  href={action.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileTap={{ scale: 0.95 }}
-                  className="relative inline-flex items-center justify-center px-4 py-2 mb-2 overflow-hidden text-sm font-medium text-white rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 hover:from-blue-500 hover:to-cyan-500 focus:ring-4 focus:outline-none focus:ring-cyan-200"
-                >
-                  {action.label}
-                </motion.a>
+                <div key={btnIndex} className="flex gap-2">
+                  <motion.a
+                    href={action.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileTap={{ scale: 0.95 }}
+                    className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg hover:from-blue-600 hover:to-cyan-600"
+                  >
+                    {action.label}
+                  </motion.a>
+                  <button
+                    onClick={addToCart}
+                    className="px-3 py-2 text-sm font-medium text-cyan-600 border border-cyan-500 rounded-lg hover:bg-cyan-50"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
               ))}
             </motion.div>
           ))}

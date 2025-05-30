@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Product from './pages/Product';
 import About from './pages/About';
+import LikeUnlike from './pages/LikeUnlike';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/product" element={<Product />} />
         <Route path="/about" element={<About />} />
+        <Route path='/like' element={<LikeUnlike />} />
       </Routes>
     </div>
   );
