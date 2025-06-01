@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Product from './pages/Product';
 import About from './pages/About';
 import LikeUnlike from './pages/LikeUnlike';
+import CartPage from './pages/CartPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/about" element={<About />} />
         <Route path='/like' element={<LikeUnlike />} />
+         <Route path="/cart" element={<CartPage />} />
       </Routes>
     </div>
   );
