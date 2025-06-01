@@ -41,7 +41,7 @@ const Product = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileTap={{ scale: 0.95 }}
-                    className="px-2 py-2 text-sm font-medium text-white bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg hover:from-blue-600 hover:to-cyan-600"
+                    className="px-2 py-2 h-9 text-sm font-medium text-white bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg hover:from-blue-600 hover:to-cyan-600"
                   >
                     {action.label}
                   </motion.a>
